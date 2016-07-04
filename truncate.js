@@ -16,8 +16,31 @@
 // This portion of the script is meant to call and display the result of your Function.
 // You do not need to change the following lines, but you may change them if you 
 // are experimenting further or pursuing stretch goals.
+
+
+
+
 var originalText = "There are two hard things in Computer Science: Cach invalidation, naming things, and off-by-one errors.";
 var wordLimit = 8;
 var shortText = truncateWords(originalText, wordLimit);
 console.log('originalText: ' + originalText);
 console.log('shortText: ' + shortText);
+
+//Begin: Create function truncateWords that accepts two arguments
+function truncateWords(longText, numWords){
+//1. Use the split() function to split the String into an Array 
+  longTextArray = longText.split(" ");
+      console.log(longTextArray);
+//2. Use the length attribute to find the number of words in the Array  
+  numWords = longTextArray.length;
+//3. Determine how many words should be removed from the String
+  var totalWordsRemove = numWords - wordLimit;
+//4. Remove those words from the Array
+  longTextArray-totalWordsRemove
+// 5. Add an additional String item to the Array to put an ellipses in: "..."
+// 6. Use the join() function to convert the Array back into a String
+// 7. Return the truncated String from the Function  
+  
+  
+
+}
