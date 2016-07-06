@@ -27,20 +27,26 @@ console.log('originalText: ' + originalText);
 console.log('shortText: ' + shortText);
 
 //Begin: Create function truncateWords that accepts two arguments
-function truncateWords(longText, numWords){
+function truncateWords(longText, numWords) {
 //1. Use the split() function to split the String into an Array 
-  longTextArray = longText.split(" ");
-      console.log(longTextArray);
+    var longTextArray = longText.split(" ");
+    console.log(longTextArray);
 //2. Use the length attribute to find the number of words in the Array  
-  numWords = longTextArray.length;
+    var sentenceLength = longTextArray.length;
+    console.log(sentenceLength);
 //3. Determine how many words should be removed from the String
-  var totalWordsRemove = numWords - wordLimit;
+    var wordsToRemove = sentenceLength - numWords;
+    console.log(wordsToRemove);
 //4. Remove those words from the Array
-  longTextArray-totalWordsRemove
+     longTextArray.splice(numWords, wordsToRemove);
+    console.log(longTextArray);
 // 5. Add an additional String item to the Array to put an ellipses in: "..."
+     longTextArray.push("...");
+    console.log(longTextArray);
 // 6. Use the join() function to convert the Array back into a String
-// 7. Return the truncated String from the Function  
-  
-  
-
+     var truncatedText = longTextArray.join(" ");
+// 7. Return the truncated String from the Function 
+    return truncatedText;
 }
+  
+  
